@@ -1,0 +1,21 @@
+
+
+# type Member @entity{
+#     id: ID!
+#     nftId: [MembershipStarted!]@derivedFrom(field:nftId)
+#     isActiveStatus: Bool!
+
+# }
+
+type MembershipStarted @entity{
+  id: ID!
+  user: Bytes! # address
+  nftId: BigInt! # uint256
+  startedAtTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+# type User @entity {
+#     id: ID!
+#     nftIds:[MembershipStarted!]! @derivedFrom(field: "nftId")
+# }
